@@ -9,18 +9,18 @@ export class BrandsService {
 
 
   private brands: Brand[] = [
-    {
-      id: uuid(),
-      name: 'Audi',
-      createdAT: new Date().getTime(),
-      updatedAT: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'BMW',
-      createdAT: new Date().getTime(),
-      updatedAT: Date.now(),
-    },
+    // {
+    //   id: uuid(),
+    //   name: 'Audi',
+    //   createdAT: new Date().getTime(),
+    //   updatedAT: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'BMW',
+    //   createdAT: new Date().getTime(),
+    //   updatedAT: Date.now(),
+    // },
   ];
 
 
@@ -68,4 +68,11 @@ export class BrandsService {
   remove(id: string) {
     this.brands = this.brands.filter((brand) => brand.id !== id);
   }
+
+
+    fillBrandsWithSeedData( brands: Brand[] ) {
+  
+     this.brands = brands;
+      
+    }
 }

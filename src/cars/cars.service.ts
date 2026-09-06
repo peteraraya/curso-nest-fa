@@ -7,9 +7,9 @@ import { CreateCarDto, UpdateCarDto } from './dto/index.js';
 export class CarsService {
 
   private cars: Car[] = [
-    { id: uuid(), brand: 'Toyota', model: 'Camry', year: '2020' },
-    { id: uuid(), brand: 'Honda', model: 'Civic', year: '2019' },
-    { id: uuid(), brand: 'Ford', model: 'Mustang', year: '2021' },
+    // { id: uuid(), brand: 'Toyota', model: 'Camry', year: '2020' },
+    // { id: uuid(), brand: 'Honda', model: 'Civic', year: '2019' },
+    // { id: uuid(), brand: 'Ford', model: 'Mustang', year: '2021' },
   ];
 
 
@@ -62,6 +62,13 @@ export class CarsService {
     const car = this.findOneById(id);
     // si no existe el id, el servidor responde con un 404
     this.cars = this.cars.filter(car => car.id !== id);
+  }
+
+
+  fillCarsWithSeedData( cars: Car[] ) {
+
+   this.cars = cars;
+    
   }
 
 
